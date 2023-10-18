@@ -9,7 +9,7 @@ const UploadPage = () => {
     const [publicId, setPublicId] = useState('')
   return (
     <>
-    { publicId && <CldImage src={publicId} width={270} height={180} />}
+    { publicId && <CldImage src={publicId} width={270} height={180} alt=''/>}
       <CldUploadWidget 
         uploadPreset='e7q8rcj7'
         onUpload={ (result, widget) => {
@@ -19,8 +19,8 @@ const UploadPage = () => {
         }}
         options={{
             sources:['local'],
-multiple:false,
-maxFiles:5,
+            multiple:false,
+            maxFiles:5,
         }}
         >
             { ({open}) => { return <button className='btn btn-primary' onClick={ (e) => open()}>Upload</button>
