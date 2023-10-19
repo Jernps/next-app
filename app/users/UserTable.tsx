@@ -18,15 +18,15 @@ const UserTable = async ({sortOrder} : Props) => {
 
     const sortedUsers = sort(users).asc(sortOrder === "Email" ? (user) => user.email : (user) =>user.name)
   return (
-     <table className='table'>
-    <thead>
-        <th><Link href="/users?sortOrder=Name">Name</Link></th>
-        <th><Link href="/users?sortOrder=Email">Email</Link></th>
-    </thead>
-    <tbody>
-        {sortedUsers.map(user => <tr key={user.id}>
-            <td>{user.name}</td><td>{user.email}</td></tr>)}
-    </tbody>
+    <table className='table'>
+        <thead>
+            <th><Link href="/users?sortOrder=Name">Name</Link></th>
+            <th><Link href="/users?sortOrder=Email">Email</Link></th>
+        </thead>
+        <tbody>
+            {sortedUsers.map(user => <tr key={user.id}>
+                <td>{user.name}</td><td>{user.email}</td></tr>)}
+        </tbody>
    </table>
   )
 }
